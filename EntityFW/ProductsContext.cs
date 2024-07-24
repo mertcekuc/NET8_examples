@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EntityFW
 {
+
+    //pYS_002 EFW
     public class ProductsContext :DbContext
     {
         public  DbSet<Product> Products { get; set; }
