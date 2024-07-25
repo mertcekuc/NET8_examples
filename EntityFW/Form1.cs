@@ -56,14 +56,19 @@ namespace EntityFW
             {
                 id = Convert.ToInt32(dgwProduct.CurrentRow.Cells[0].Value),
                 ProductName = tbxUpName.Text.ToString(),
-                UnitPrice= Convert.ToDecimal(tbxUpPrice.Text),
+                UnitPrice = Convert.ToDecimal(tbxUpPrice.Text),
                 StockAmount = Convert.ToInt32(tbxUpAmount.Text)
             });
 
             MessageBox.Show("Updated");
             updateTable();
 
-            
+
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgwProduct.DataSource = _prooductDal.Search(tbxSearch.Text);
         }
     }
 }
