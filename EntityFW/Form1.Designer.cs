@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnUpdate = new Button();
             label6 = new Label();
             Label5 = new Label();
@@ -46,6 +47,9 @@
             btnDelete = new Button();
             groupBox1 = new GroupBox();
             dgwProduct = new DataGridView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            tbxSearch = new TextBox();
+            label4 = new Label();
             gbxAdd.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgwProduct).BeginInit();
@@ -185,7 +189,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(406, 15);
+            btnDelete.Location = new Point(41, 19);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 20;
@@ -202,9 +206,9 @@
             groupBox1.Controls.Add(Label5);
             groupBox1.Controls.Add(tbxUpPrice);
             groupBox1.Controls.Add(Laabel4);
-            groupBox1.Location = new Point(304, 300);
+            groupBox1.Location = new Point(276, 300);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(183, 205);
+            groupBox1.Size = new Size(211, 205);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "gbxUpdate";
@@ -218,11 +222,35 @@
             dgwProduct.TabIndex = 17;
             dgwProduct.CellClick += dgwProduct_CellClick;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // tbxSearch
+            // 
+            tbxSearch.Location = new Point(387, 20);
+            tbxSearch.Name = "tbxSearch";
+            tbxSearch.Size = new Size(100, 23);
+            tbxSearch.TabIndex = 22;
+            tbxSearch.TextChanged += tbxSearch_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(338, 23);
+            label4.Name = "label4";
+            label4.Size = new Size(42, 15);
+            label4.TabIndex = 23;
+            label4.Text = "Search";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(531, 529);
+            Controls.Add(label4);
+            Controls.Add(tbxSearch);
             Controls.Add(gbxAdd);
             Controls.Add(btnDelete);
             Controls.Add(groupBox1);
@@ -236,6 +264,7 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgwProduct).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -258,5 +287,8 @@
         private Button btnDelete;
         private GroupBox groupBox1;
         private DataGridView dgwProduct;
+        private ContextMenuStrip contextMenuStrip1;
+        private TextBox tbxSearch;
+        private Label label4;
     }
 }

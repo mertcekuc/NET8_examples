@@ -17,8 +17,9 @@ namespace EntityFW
         {
             using (ProductsContext context = new ProductsContext(connectıonStrıng))
             {
-
+                var result = context.Products.Where(p => p.id > 0 && p.ProductName.StartsWith("mert"));
                 return context.Products.ToList();
+                
             }
         }
 
@@ -54,6 +55,16 @@ namespace EntityFW
 
 
         }
+
+        public List<Product> Search(String key)
+        {
+            using (ProductsContext context = new ProductsContext(connectıonStrıng))
+            {
+                var result = context.Products.Where(p => p.ProductName.ToLower().Contains(key.ToLower())).ToList();
+                return result;
+            }
+        }
+      
 
     }
 }
